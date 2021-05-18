@@ -8,3 +8,19 @@
     margin: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  .big-val {
+    font-size: 26px;
+    margin: 10px;
+    padding: 5px;
+  }
+
+  button {
+    padding: 2px;
+    margin: 10px;
+    border: none;
+    letter-spacing: 1.2px;
+    background: none;
+    cursor: pointer;
+    font-size: 20px
+  }

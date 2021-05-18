@@ -1,7 +1,7 @@
-import { render } from "react-dom";
+import Main from "./Main";
 
 const App = () => {
-    return <div>Hello World</div>
-  };
+  return <Main />;
+};
 
-render(<App />, document.getElementById("root"));
+export default App;
