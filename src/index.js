@@ -4,7 +4,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import App from "./App";
-import counter from "./reducers";
+import counter from "./counterSlice";
 
 const store = createStore(counter);
 const rootElement = document.getElementById("root");
