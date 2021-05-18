@@ -1,12 +1,22 @@
 import { render } from "react-dom";
 
-import { createStore } from "redux";
+import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from "react-redux";
+import { setupListeners } from '@rtk-incubator/rtk-query';
 
 import App from "./App";
-import counter from "./counterSlice";
+import counterReducer from "./counterSlice";
+import { pokemonApi } from './pokemonService';
 
-const store = createStore(counter);
+
+export const store = configureStore({
+  reducer: {
+    [pokemonApi.reducerPath]: pokemonApi.reducer,
+    counter: counterReducer
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(pokemonApi.middleware),
+});
+
 const rootElement = document.getElementById("root");
 render(
   <Provider store={store}>
@@ -14,3 +24,5 @@ render(
   </Provider>,
   rootElement
 );
+
+setupListeners(store.dispatch);

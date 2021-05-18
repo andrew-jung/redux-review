@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 interface CounterState {
   value: number
 }
-const initialState = { value: 0 } as CounterState;
+const initialState = { value: 1 } as CounterState;
 
 const counterSlice = createSlice({
   name: "counter",
@@ -13,10 +13,10 @@ const counterSlice = createSlice({
       state.value++;
     },
     decrement(state) {
-      state.value--;
+      state.value > 1 ? state.value-- : 1;
     },
     reset(state) {
-      state.value = 0;
+      state.value = 1;
     },
   },
 });
