@@ -1,0 +1,38 @@
+{
+  "name": "redux-review",
+  "version": "1.0.0",
+  "description": "Catching up with Redux with hooks &amp; RTK",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-jung/redux-review.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrew-jung/redux-review/issues"
+  },
+  "homepage": "https://github.com/andrew-jung/redux-review#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "parcel": "^1.12.3",
+    "prettier": "^2.3.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions"
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
