@@ -13,3 +13,5 @@ Branches contain new fun things based on the typical Counter example (increment,
 - `now_with_hooks`: Upgrade! Use new hooks to dispatch, access the store, creating your reducers/actions via slice
 - `typed_hooks`: Added TypeScript, typed useSelector and some small stuff
 - `rtk_query`: Use RTK Query to call the Pokemon API using our Counter state
+
+⚠ If switching to a new branch it won't build/gives you an error about not finding a file, delete your `dist` and `.cache` directories. ⚠️
