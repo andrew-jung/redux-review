@@ -1,0 +1,136 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Redux v7",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "Let's learn/review some Redux."
+    },
+    {
+      "file": "package.json",
+      "selection": {
+        "start": {
+          "line": 37,
+          "character": 4
+        },
+        "end": {
+          "line": 37,
+          "character": 16
+        }
+      },
+      "description": "We need Redux v7!"
+    },
+    {
+      "file": "src/index.js",
+      "selection": {
+        "start": {
+          "line": 9,
+          "character": 1
+        },
+        "end": {
+          "line": 17,
+          "character": 1
+        }
+      },
+      "description": "Let's start with a basic configuration where we wrap our root with a Provider and store."
+    },
+    {
+      "file": "src/actions.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 4,
+          "character": 1
+        }
+      },
+      "description": "Since it's a Counter example, let's add some actions we think we'll need. Actions are what we fire from the UI through `dispatch`"
+    },
+    {
+      "file": "src/reducers.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 14,
+          "character": 1
+        }
+      },
+      "description": "This is where we handle our actions, and what they'll do to our state. Actions are plain ol JavaScript objects, and often times we'll pass a `payload` key to mutate the state with, for example, if we wanted to `incrementBySomeAmount`, the payload would contain that value."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 2,
+          "character": 1
+        }
+      },
+      "description": "We need `connect` to connect our component to the store, which is where all of our global state lives."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 3,
+          "character": 1
+        },
+        "end": {
+          "line": 3,
+          "character": 75
+        }
+      },
+      "description": "Let's import our actions, since this is our UI, we'll dispatch these actions, which will go to our reducer in the previous step, and mutate our state."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 16,
+          "character": 1
+        },
+        "end": {
+          "line": 23,
+          "character": 3
+        }
+      },
+      "description": "`mapStateToProps` and `mapDispatchToProps` are some helpers we have when connecting our component to the store. We can map pieces of state from our store (e.g., `value`) as a prop, this is an alternative to passing all these props around (and why redux is great!)\n\n`mapDispatchToProps` is helpful in organizing your component and adding a \"glance\" value of what actions this component will dispatch/do."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 24,
+          "character": 1
+        },
+        "end": {
+          "line": 25,
+          "character": 1
+        }
+      },
+      "description": "Now we connect it all together. With this, our Counter component is ready to go."
+    },
+    {
+      "file": "src/ClassyMain.jsx",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 31,
+          "character": 1
+        }
+      },
+      "description": "I added a class based component example here, since not everything is always function-based. I also included an example without `mapDispatchToProps`, where we grab `dispatch` from our props/or even imported to call our actions, you can make your own judgment on which you prefer until we have hooks (I like `mapDispatchToProps`.)"
+    }
+  ]
+}
