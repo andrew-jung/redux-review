@@ -4,26 +4,27 @@ import { connect } from "react-redux";
 import { incrementAction, decrementAction, resetAction } from "./actions";
 
 class ClassyMain extends Component {
+
+  onClick = () => {
+    const { dispatch } = this.props;
+
+    dispatch({"type": "DISPATCH"})
+  }
+
   render() {
-    const { counter, increment, decrement, reset } = this.props;
+    const { counter, dispatch } = this.props;
 
     return (
       <div>
         <div className="big-val">Current value: {counter}</div>
-        <button onClick={increment}>Increment</button>
-        <button onClick={decrement}>Decrement</button>
-        <button onClick={reset}>Reset</button>
+        <button onClick={dispatch(incrementAction)}>Increment</button>
+        <button onClick={dispatch(decrementAction)}>Decrement</button>
+        <button onClick={dispatch(resetAction)}>Reset</button>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => ({ counter: state.value });
-const mapDispatchToProps = (dispatch) => {
-  return {
-    increment: () => dispatch(incrementAction()),
-    decrement: () => dispatch(decrementAction()),
-    reset: () => dispatch(resetAction()),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(ClassyMain);
+
+export default connect(mapStateToProps)(ClassyMain);
