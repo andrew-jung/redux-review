@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import { incrementAction, decrementAction, resetAction } from "./actions";
 
-const Main = ({ counter, increment, decrement, reset }) => {
+const Main = ({ counter, decrement, increment, reset }) => {
   return (
     <div>
       <div className="big-val">Current value: {counter}</div>
