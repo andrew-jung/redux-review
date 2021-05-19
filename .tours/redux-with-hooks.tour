@@ -1,0 +1,104 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Redux with hooks",
+  "steps": [
+    {
+      "file": "src/index.js",
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 1
+        },
+        "end": {
+          "line": 17,
+          "character": 1
+        }
+      },
+      "description": "Like our previous example, we configure the store and wrap the root component with a Provider."
+    },
+    {
+      "file": "src/counterSlice.js",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 2,
+          "character": 1
+        }
+      },
+      "description": "`createSlice` is a hook/alternative to creating your actions and reducers separately. \nIt takes an object with a name (slice name), an initial state, and an object of reducers, similar to how our previous reducers are.\n\nThe actions are created automagically under the hood using the `createAction` hook based on the reducer keys (and the reducers are created under the hood using `createReducer`).\n\nWe need to export our generated actions to be used in our UI later, as well as our generated reducer, since it needs to be connected to the store."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 3,
+          "character": 1
+        },
+        "end": {
+          "line": 4,
+          "character": 1
+        }
+      },
+      "description": "Import our actions from our fresh slice."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 2,
+          "character": 1
+        }
+      },
+      "description": "Two spankin' new hooks, `useDispatch` is named pretty \"obviously\", but it's a hook to use `dispatch`, WITHOUT connecting your component to the store. None of that `connect()`, `mapDispatchToProps` stuff!\n\n`useSelector` is like `mapStateToProps`, but we can grab slices of our state and assign it to a variable, let's see."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 7,
+          "character": 3
+        },
+        "end": {
+          "line": 7,
+          "character": 34
+        }
+      },
+      "description": "With this single line, we can use `dispatch` as we'd normally do, and just fire off actions like `dispatch(action)`!"
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 8,
+          "character": 3
+        },
+        "end": {
+          "line": 8,
+          "character": 53
+        }
+      },
+      "description": "We're basically saying, hey state, I'm looking for the `value` key, gimme that. We know it exists since we defined it in our `initialState` of our slice."
+    },
+    {
+      "file": "src/Main.jsx",
+      "selection": {
+        "start": {
+          "line": 1,
+          "character": 1
+        },
+        "end": {
+          "line": 21,
+          "character": 1
+        }
+      },
+      "description": "Overall, the component looks smaller, and the things we accomplished before, we can with hooks.\n\nSide note, if we want to type `useDispatch` and `useSelector`, it's better to have a `hooks.ts` file where we wrap the function and use that instead, instead of typing it each time we define it.\n\nWe can also talk about `createSelector`, a memoized selector function."
+    }
+  ]
+}
